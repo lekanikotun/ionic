@@ -7,12 +7,12 @@
         .config(function ($stateProvider, $urlRouterProvider) {
 
             $stateProvider
-                .state('eventmenu', {
+                .state('tabs', {
                     url: "/event",
                     abstract: true,
                     templateUrl: "templates/event-menu.html"
                 })
-                .state('eventmenu.home', {
+                .state('tabs.home', {
                     url: "/home",
                     views: {
                         'menuContent': {
@@ -20,7 +20,7 @@
                         }
                     }
                 })
-                .state('eventmenu.checkin', {
+                .state('tabs.checkin', {
                     url: "/check-in",
                     views: {
                         'menuContent': {
@@ -29,12 +29,32 @@
                         }
                     }
                 })
-                .state('eventmenu.attendees', {
+                .state('tabs.attendees', {
                     url: "/attendees",
                     views: {
                         'menuContent': {
                             templateUrl: "templates/attendees.html",
                             controller: "AttendeesCtrl"
+                        }
+                    }
+                })
+                .state('tabs.login', {
+                    url: "/login",
+                    views: {
+                        'menuContent': {
+                            templateUrl: "templates/login.html",
+                            controller: "LoginCtrl",
+                            controllerAs: 'vm'
+                        }
+                    }
+                })
+                .state('tabs.register', {
+                    url: "/register",
+                    views: {
+                        'menuContent': {
+                            templateUrl: "templates/register.html",
+                            controller: "RegistrationCtrl",
+                            controllerAs: 'vm'
                         }
                     }
                 })
