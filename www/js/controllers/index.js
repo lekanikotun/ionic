@@ -5,6 +5,7 @@
     angular.module('ionicApp')
 
         .controller('MainCtrl', function ($scope, $ionicSideMenuDelegate) {
+
             $scope.attendees = [
                 {firstname: 'Nicolas', lastname: 'Cage'},
                 {firstname: 'Jean-Claude', lastname: 'Van Damme'},

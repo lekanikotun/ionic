@@ -27,6 +27,11 @@
                             templateUrl: "templates/check-in.html",
                             controller: "CheckinCtrl"
                         }
+                    },
+                    resolve: {
+                        currentAuth: function(Authentication) {
+                            return Authentication.requireAuth();
+                        }
                     }
                 })
                 .state('tabs.attendees', {
@@ -45,6 +50,19 @@
                             templateUrl: "templates/login.html",
                             controller: "LoginCtrl",
                             controllerAs: 'vm'
+                        }
+                    }
+                })
+                .state('tabs.logout', {
+                    url: "/logout",
+                    views: {
+                        'menuContent': {
+                            templateUrl: "templates/logout.html"
+                        }
+                    },
+                    resolve: {
+                        logout: function(Authentication) {
+                            return Authentication.logout();
                         }
                     }
                 })
